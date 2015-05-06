@@ -17,13 +17,13 @@ test('test connect to local single-machine AsterixDB instance', function(t) {
   var asterixdbHost = nconf.get('database').web;
 
   request
-    .get(asterixdb_host)
+    .get(asterixdbHost)
     .on('error', function(err) {
-      t.fail('Could not connect to AsterixDB instance at ' + asterixdb_host);
+      t.fail('Could not connect to AsterixDB instance at ' + asterixdbHost);
       t.end();
     })
     .on('response', function(res) {
-      t.equal(res.statusCode, 200, 'reached AsterixDB at ' + asterixdb_host);
+      t.equal(res.statusCode, 200, 'reached AsterixDB at ' + asterixdbHost);
       t.end();
     });
 });
